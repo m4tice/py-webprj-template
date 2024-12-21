@@ -1,10 +1,11 @@
-"""
-init file for the app package
-"""
 from flask import Flask
 
-app = Flask(__name__)
 
-# app's modules importation is placed here to prevent circular imports
-# pylint: disable=wrong-import-position
-from app import routes
+def create_app():
+    app = Flask(__name__)
+
+    from app.development import development_bp
+    app.register_blueprint(development_bp, url_prefix='/development')
+    
+    return app
+
