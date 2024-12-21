@@ -14,7 +14,6 @@ class Operator:
         self.faction,\
         self.rarity,\
         self.season,\
-        self.ref_status,\
         self.ref1,\
         self.ref2,\
         self.ref3 = args

@@ -18,15 +18,15 @@
                 <div class="card">
                     <img class="card-img-top" id="operator-img-{{ operator.id }}" src="{{ operator.ref1 }}"
                         alt="Unknown" style="width:100%">
-                    <h5>{{ operator.alias }}</h5>
+                    <h5 id="card-alias-{{ operator.id }}">{{ operator.alias }}</h5>
                     <p class="card-title">{{ operator.unit }}</p>
                     <p>{{ operator.origin }}</p>
                     <p><button>Deploy</button></p>
                 </div>
             </div>
-            {% if operator.ref_status == "offline" %}
+            {% if operator.unit == "SAS" %}
             <script>
-                document.getElementById("operator-img-{{ operator.id }}").src = "https://titles.trackercdn.com/modern-warfare/db/images/ui_loot_operator_west_otter_4_1.png?10697530";
+                document.getElementById("card-alias-{{ operator.id }}").innerHTML = "{{ operator.alias }} (PRO)";
             </script>
             {% endif %}
             {% endfor %}
