@@ -4,7 +4,7 @@ Routes module
 from flask import render_template
 
 from . import development_bp
-from app.model import headers_weapon, data_weapons, operators
+from app.model import headers_weapon, data_weapons, operators, dummy_operators
 
 @development_bp.route('/')
 def home():
@@ -26,3 +26,18 @@ def operators_endpoint():
     warzone's operators page
     """
     return render_template('development/operators.html', operators=operators)
+
+@development_bp.route('/operators2')
+def operators2_endpoint():
+    """
+    warzone's operators2 page
+    """
+    return render_template('development/operators2.html', operators=dummy_operators)
+
+@development_bp.route('/test')
+def test_endpoint():
+    return render_template('development/index.html')
+
+@development_bp.route('/table')
+def table_endpoint():
+    return render_template('development/table.html')
