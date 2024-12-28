@@ -49,3 +49,7 @@ def rq1_endpoint():
 @development_bp.route('/catalogue1')
 def catalogue1_endpoint():
     return render_template('development/catalogue_01.html')
+
+@development_bp.route('/catalogue2')
+def catalogue2_endpoint():
+    return render_template('development/catalogue_02.html')
