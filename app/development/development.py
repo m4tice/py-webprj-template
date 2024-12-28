@@ -45,3 +45,7 @@ def table_endpoint():
 @development_bp.route('/rq1')
 def rq1_endpoint():
     return render_template('development/rq1.html')
+
+@development_bp.route('/catalogue1')
+def catalogue1_endpoint():
+    return render_template('development/catalogue_01.html')
