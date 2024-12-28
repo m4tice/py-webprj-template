@@ -27,11 +27,11 @@ html {
 
 /* Position text in the middle of the page/image */
 .container {
-    background-color: rgb(0, 0, 0);
+    /* background-color: rgb(0, 0, 0); */
     /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.4); */
     /* Black w/opacity/see-through */
-    color: white;
+    /* color: white; */
     /* font-weight: bold; */
     /* border: 3px solid #f1f1f1; */
     position: absolute;
@@ -42,4 +42,8 @@ html {
     width: 80%;
     padding: 20px;
     /* text-align: center; */
+}
+
+card-img {
+    background-color: #0b0b2e;
 }

@@ -41,3 +41,7 @@ def test_endpoint():
 @development_bp.route('/table')
 def table_endpoint():
     return render_template('development/table.html')
+
+@development_bp.route('/rq1')
+def rq1_endpoint():
+    return render_template('development/rq1.html')
