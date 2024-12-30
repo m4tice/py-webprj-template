@@ -27,17 +27,6 @@ def operators_endpoint():
     """
     return render_template('development/operators.html', operators=dummy_operators)
 
-# @development_bp.route('/operators2')
-# def operators2_endpoint():
-#     """
-#     warzone's operators2 page
-#     """
-#     return render_template('development/operators2.html', operators=dummy_operators)
-
-# @development_bp.route('/test')
-# def test_endpoint():
-#     return render_template('development/index.html')
-
 @development_bp.route('/table')
 def table_endpoint():
     return render_template('development/table.html')
@@ -54,6 +43,6 @@ def catalogue1_endpoint():
 def catalogue2_endpoint():
     return render_template('development/catalogue_02.html')
 
-@development_bp.route('/card1')
-def card1_endpoint():
-    return render_template('development/card_01.html', operator=operator_instance)
+@development_bp.route('/card<card_number>')
+def card1_endpoint(card_number):
+    return render_template(f'development/card{card_number}.html', operator=operator_instance)
