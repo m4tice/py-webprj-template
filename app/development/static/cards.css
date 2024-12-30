@@ -1,0 +1,132 @@
+/* GENERAL SETTINGS */
+body {
+    background: #c850c0;
+    background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+    background: linear-gradient(45deg, #4158d0, #c850c0);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.card {
+    max-width: 300px;
+    overflow: hidden;
+    border-width: 0 !important;
+}
+
+.card-img {
+    transition: filter 0.3s ease; /* Add transition for smooth effect */
+    -webkit-transition: -webkit-filter 0.3s ease; /* Add transition for smooth effect */
+    -webkit-backface-visibility: hidden; /* not sure what this does */
+    -webkit-transform: translateZ(0) scale(1, 1);
+    -webkit-font-smoothing: antialiased;
+}
+
+.card-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    font-size: small !important;
+}
+
+.col-md-4 {
+    padding: 70px !important;
+}
+
+/* CARD 0 */
+#card-body-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 60px !important; /* Add padding to create space for buttons */
+}
+
+#card-buttons-0 {
+    position: absolute;
+    bottom: 16px; /* Start position off screen */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 6px;
+}
+
+/* CARD 1 */
+#card-img-overlay-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: translateY(10%);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+#card-body-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card:hover #card-img-1 {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.card:hover #card-img-overlay-1 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card:hover #card-buttons-1 {
+    bottom: 16px; /* End position on hover */
+}
+
+/* CARD 2 */
+#card-img-overlay-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#card-body-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    transition: transform 0.3s ease; /* Transition for sliding effect */
+}
+
+.card:hover #card-img-2 {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.card:hover #card-body-2 {
+    transform: translateY(-30px);
+    padding-bottom: 16px !important;
+}
+
+#card-buttons-2 {
+    position: absolute;
+    bottom: -50px; /* Start position off screen */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 6px;
+    transition: bottom 0.3s ease; /* Transition for sliding effect */
+}
+
+.card:hover #card-buttons-2 {
+    bottom: 16px; /* End position on hover */
+}

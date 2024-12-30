@@ -43,6 +43,6 @@ def catalogue1_endpoint():
 def catalogue2_endpoint():
     return render_template('development/catalogue_02.html')
 
-@development_bp.route('/card<card_number>')
-def card1_endpoint(card_number):
-    return render_template(f'development/card{card_number}.html', operator=operator_instance)
+@development_bp.route('/cards')
+def card1_endpoint():
+    return render_template(f'development/cards.html', operator=operator_instance)

@@ -16,20 +16,20 @@ body {
 
 .card {
     max-width: 300px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .card-img {
-    transition: filter 0.5s ease; /* Add transition for smooth effect */
-    -webkit-transition: -webkit-filter 0.5s ease; /* Add transition for smooth effect */
+    transition: filter 0.3s ease; /* Add transition for smooth effect */
+    -webkit-transition: -webkit-filter 0.3s ease; /* Add transition for smooth effect */
     -webkit-backface-visibility: hidden; /* not sure what this does */
     -webkit-transform: translateZ(0) scale(1, 1);
     -webkit-font-smoothing: antialiased;
 }
 
 .card:hover .card-img {
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
 }
 
 .card-img-overlay {
@@ -41,22 +41,19 @@ body {
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-buttons button {
+    flex: 1;
+    /* margin: 0 5px; */
+    font-size: small !important;
+}
+
 .card:hover .card-img-overlay {
     transform: translateY(0);
     opacity: 1;
-}
-
-/* #button-group {
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-}
-
-.card:hover #button-group {
-    transform: translateY(0);
-    opacity: 1;
-} */
-
-.btn {
-    font-size: small !important;
 }

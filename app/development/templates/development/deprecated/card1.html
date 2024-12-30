@@ -15,18 +15,17 @@
         <div class="card bg-dark bg-gradient text-white">
             <img src="{{ operator.ref1 }}" class="card-img" alt="operator">
             <div class="card-img-overlay">
-                <h5 class="card-title">{{ operator.alias }}</h5>
-                <p class="card-text">{{ operator.unit }}</p>
-                <p class="card-text">{{ operator.origin }}</p>
-                <div id="button-group" class="d-flex gap-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ operator.alias }}</h5>
+                    <p class="card-text">{{ operator.unit }}</p>
+                    <p class="card-text">{{ operator.origin }}</p>
+                </div>
+                <div class="card-buttons d-flex gap-3">
                     <button class="btn btn-primary w-50" type="button">Detail</button>
                     <button class="btn btn-primary w-50" type="button">Contact</button>
                 </div>
             </div>
         </div>
     </div>
-    
-    <script src="static/card1.js"></script>
 </body>
-
 </html>

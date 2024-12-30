@@ -48,9 +48,10 @@ body {
     transition: transform 0.3s ease; /* Transition for sliding effect */
 }
 
-.card:hover .card-body {
-    transform: translateY(-30px);
-    padding-bottom: 16px !important;
+.card-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    font-size: small !important;
 }
 
 .card-buttons {
@@ -65,12 +66,11 @@ body {
     transition: bottom 0.3s ease; /* Transition for sliding effect */
 }
 
-.card:hover .card-buttons {
-    bottom: 16px; /* End position on hover */
+.card:hover .card-body {
+    transform: translateY(-30px);
+    padding-bottom: 16px !important;
 }
 
-.card-buttons button {
-    flex: 1;
-    margin: 0 5px;
-    font-size: small !important;
+.card:hover .card-buttons {
+    bottom: 16px; /* End position on hover */
 }
