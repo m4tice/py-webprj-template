@@ -16,6 +16,7 @@ body {
 
 .card {
     max-width: 300px;
+    /* overflow: hidden; */
 }
 
 .card-img {
@@ -35,7 +36,26 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    transform: translateY(10%);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
+
+.card:hover .card-img-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* #button-group {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.card:hover #button-group {
+    transform: translateY(0);
+    opacity: 1;
+} */
 
 .btn {
     font-size: small !important;
