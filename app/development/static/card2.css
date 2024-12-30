@@ -20,8 +20,8 @@ body {
 }
 
 .card-img {
-    transition: filter 0.5s ease; /* Add transition for smooth effect */
-    -webkit-transition: -webkit-filter 0.5s ease; /* Add transition for smooth effect */
+    transition: filter 0.3s ease; /* Add transition for smooth effect */
+    -webkit-transition: -webkit-filter 0.3s ease; /* Add transition for smooth effect */
     -webkit-backface-visibility: hidden; /* not sure what this does */
     -webkit-transform: translateZ(0) scale(1, 1);
     -webkit-font-smoothing: antialiased;
@@ -44,11 +44,13 @@ body {
     justify-content: flex-end;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    padding-bottom: 0 !important;
     transition: transform 0.3s ease; /* Transition for sliding effect */
 }
 
 .card:hover .card-body {
     transform: translateY(-30px);
+    padding-bottom: 16px !important;
 }
 
 .card-buttons {
