@@ -16,7 +16,7 @@ body {
 
 .card {
     max-width: 300px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .card-img {
@@ -70,5 +70,5 @@ body {
 .card-buttons button {
     flex: 1;
     margin: 0 5px;
-    /* font-size: small !important; */
+    font-size: small !important;
 }
