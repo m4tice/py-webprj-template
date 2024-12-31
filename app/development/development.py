@@ -20,13 +20,6 @@ def weapons_endpoint():
     """
     return render_template('development/weapons.html', headers=headers_weapon, data=data_weapons)
 
-@development_bp.route('/operators')
-def operators_endpoint():
-    """
-    warzone's operators page
-    """
-    return render_template('development/operators.html', operators=dummy_operators)
-
 @development_bp.route('/table')
 def table_endpoint():
     return render_template('development/table.html')
