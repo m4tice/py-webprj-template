@@ -35,13 +35,9 @@ def table_endpoint():
 def rq1_endpoint():
     return render_template('development/rq1.html')
 
-@development_bp.route('/catalogue1')
+@development_bp.route('/catalogue')
 def catalogue1_endpoint():
-    return render_template('development/catalogue_01.html')
-
-@development_bp.route('/catalogue2')
-def catalogue2_endpoint():
-    return render_template('development/catalogue_02.html')
+    return render_template('development/catalogue.html', operators=dummy_operators)
 
 @development_bp.route('/cards')
 def card1_endpoint():
