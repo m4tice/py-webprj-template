@@ -5,7 +5,6 @@ docstring
 import sqlite3
 import random
 
-DEBUG_MODE = True
 
 class DBModel:
     """
@@ -16,6 +15,7 @@ class DBModel:
         Constructor
         """
         self.db = db
+        self.DEBUG = False
 
         if self.db is not None:
             self.connection = sqlite3.connect(self.db, check_same_thread=False)
@@ -47,7 +47,7 @@ class DBModel:
         """
         query_headers = f'SELECT * FROM {self.table_name}'
 
-        if DEBUG_MODE:
+        if self.DEBUG:
             print(f'[GUU8HC] Query: {query_headers}')
 
         self.cursor.execute(query_headers)
@@ -71,7 +71,7 @@ class DBModel:
         """
         query_select_all = f'SELECT * FROM {self.table_name}'
 
-        if DEBUG_MODE:
+        if self.DEBUG:
             print(f'[GUU8HC] Query: {query_select_all}')
 
         self.cursor.execute(query_select_all)
