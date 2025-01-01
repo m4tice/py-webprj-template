@@ -4,7 +4,7 @@ Routes module
 from flask import render_template
 
 from . import development_bp
-from app.model import headers_weapon, data_weapons, operators, dummy_operators, operator_instance
+from app.model import headers_weapon, data_weapons, dummy_operators, operator_instance, packages, data_rq1_headers, data_rq1
 
 @development_bp.route('/')
 def home():
@@ -26,7 +26,7 @@ def table_endpoint():
 
 @development_bp.route('/rq1')
 def rq1_endpoint():
-    return render_template('development/rq1.html')
+    return render_template('development/rq1.html', packages=packages, headers=data_rq1_headers, data=data_rq1)
 
 @development_bp.route('/catalogue')
 def catalogue1_endpoint():
