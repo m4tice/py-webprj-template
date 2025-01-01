@@ -6,16 +6,29 @@
 }
 
 .btn {
-    width: 50%;
-    font-size: small !important;
+    width: 100%;
+    font-size: xx-small !important;
+}
+
+.btn-billed {
+    width: 100%;
+    font-size: xx-small !important;
 }
 
 th {
     text-align: center;
-    font-size: small !important;
+    font-size: xx-small !important;
 }
 
 td {
     text-align: left;
-    font-size: small !important;
+    font-size: xx-small !important;
+}
+
+tr:hover {
+    background-color: rgb(213, 236, 255);
+}
+
+tr:hover td {
+    background-color: transparent; /* or #000 */
 }

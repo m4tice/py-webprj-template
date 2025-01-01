@@ -20,12 +20,13 @@
     </div>
 
     <div class="container container-table">
-        <table class="table table-striped">
+        <table class="table table-striped table-hover" id="rq1-table">
             <thead>
                 <tr>
                     {% for header in headers %}
                     <th class="table-dark">{{ header }}</th>
                     {% endfor %}
+                    <th class="table-dark">Billed</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,10 +35,12 @@
                     {% for value in item %}
                     <td>{{ value }}</td>
                     {% endfor %}
+                    <td><button class="btn btn-primary btn-billed">billed</button></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+    <script src="static/rq1.js"></script>
 </body>
 </html>
