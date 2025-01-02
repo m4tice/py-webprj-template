@@ -32,8 +32,8 @@
             <tbody>
                 {% for item in data %}
                 <tr>
-                    {% for value in item %}
-                    <td>{{ value }}</td>
+                    {% for i in range(headers | length) %}
+                    <td data-label="{{ headers[i] }}">{{ item[i] }}</td>
                     {% endfor %}
                     <td><button class="btn btn-primary btn-billed">billed</button></td>
                 </tr>
