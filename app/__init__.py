@@ -12,6 +12,9 @@ def create_app():
 
     from app.table import table_bp
     app.register_blueprint(table_bp, url_prefix='/table')
+
+    from app.get_request import get_request_bp
+    app.register_blueprint(get_request_bp, url_prefix='/get-request')
     
     return app
 
