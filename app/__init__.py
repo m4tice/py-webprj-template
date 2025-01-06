@@ -15,6 +15,9 @@ def create_app():
 
     from app.get_request import get_request_bp
     app.register_blueprint(get_request_bp, url_prefix='/get-request')
+
+    from app.cards import cards_bp
+    app.register_blueprint(cards_bp, url_prefix='/cards')
     
     return app
 
