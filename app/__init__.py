@@ -9,6 +9,9 @@ def create_app():
 
     from app.parameter import parameter_bp
     app.register_blueprint(parameter_bp, url_prefix='/parameter')
+
+    from app.table import table_bp
+    app.register_blueprint(table_bp, url_prefix='/table')
     
     return app
 
