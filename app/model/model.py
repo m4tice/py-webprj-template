@@ -78,23 +78,30 @@ class DBModel:
         rows = self.cursor.fetchall()
         return rows
 
-    # def get_item_by_team(self, team):
-    #     """
-    #     get data by name
-    #     """
-    #     query_select_by_product_team = f'SELECT * FROM {self.table_name} WHERE Team like "%{team}%"'
+    def get_entry_by_id(self, id):
+        """
+        get data by name
+        """
+        # query_select_by_product_team = f'SELECT * FROM {self.table_name} WHERE Team like "%{team}%"'
+        query_select_item_by_id = f'SELECT * FROM {self.table_name} WHERE shorttitle="{id}";'
 
-    #     self.cursor.execute(query_select_by_product_team)
-    #     rows = self.cursor.fetchall()
+        if self.DEBUG:
+            print(f'[DEBUG] Query: {query_select_item_by_id}')
 
-    #     return random.choice(rows)
+        self.cursor.execute(query_select_item_by_id)
+        rows = self.cursor.fetchall()
 
-    # def get_item_by_name(self, name):
-    #     """
-    #     get data by name
-    #     """
-    #     query_select_by_product_name = f'SELECT * FROM {self.table_name} WHERE Name like "%{name}%"'
+        return random.choice(rows)
 
-    #     self.cursor.execute(query_select_by_product_name)
-    #     rows = self.cursor.fetchall()
-    #     return random.choice(rows) if len(rows) > 0 else rows[0]
+    def get_entry_by_project(self, project):
+        """
+        get data by name
+        """
+        query_select_item_by_project = f'SELECT * FROM {self.table_name} WHERE project="{project}"'
+
+        if self.DEBUG:
+            print(f'[DEBUG] Query: {query_select_item_by_project}')
+
+        self.cursor.execute(query_select_item_by_project)
+        rows = self.cursor.fetchall()
+        return rows

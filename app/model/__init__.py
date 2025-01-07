@@ -22,6 +22,9 @@ data_operators_dummy = [data_operators[0],
                         data_operators[35]]
 dummy_operators = [Operator(*item) for item in data_operators_dummy]
 
+# Data for card_01.html
+operator_instance = Operator(*data_operators[30])
+
 
 # Weapon DB instance
 DATABASE_WEAPONS = 'app/model/dbs/weapons.db'
@@ -33,17 +36,11 @@ headers_weapon = model_weapon.get_headers()
 # Data from the weapons table
 data_weapons = model_weapon.get_all_items()[:10]
 
-# Data for card_01.html
-operator_instance = Operator(*data_operators[30])
-
 
 # RQ1 data
-DATABASE_RQ1 = 'app/model/dbs/rq1.db'
+DATABASE_RQ1 = 'app/model/dbs/rq12.db'
 model_rq1 = DBModel(DATABASE_RQ1)
-
-# Headers for the RQ1 table
-data_rq1 = model_rq1.get_all_items()
-data_rq1_headers = model_rq1.get_headers()
+model_rq1.DEBUG = True
 
 packages = ['ComServices',
             'ComVeh',
