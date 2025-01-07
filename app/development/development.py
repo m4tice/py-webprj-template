@@ -1,10 +1,13 @@
 """
 Routes module
 """
-from flask import render_template
+from flask import render_template, jsonify
 
 from . import development_bp
-from app.model import headers_weapon, data_weapons, dummy_operators, operator_instance, packages, data_rq1_headers, data_rq1
+from app.model import model_rq1, headers_weapon, data_weapons, dummy_operators, operator_instance, packages
+
+def test_func():
+    return 'hello'
 
 @development_bp.route('/')
 def home():
@@ -24,14 +27,33 @@ def weapons_endpoint():
 def table_endpoint():
     return render_template('development/table.html')
 
+# @development_bp.route('/button2')
+# def rq1_endpoint():
+#     return render_template('development/button2.html', packages=packages, headers=model_rq1.get_headers(), data=model_rq1.get_all_items())
+
 @development_bp.route('/rq1')
 def rq1_endpoint():
-    return render_template('development/rq1.html', packages=packages, headers=data_rq1_headers, data=data_rq1)
+    return render_template('development/rq1.html', packages=packages, headers=model_rq1.get_headers(), data=model_rq1.get_all_items())
 
 @development_bp.route('/catalogue')
 def catalogue1_endpoint():
     return render_template('development/catalogue.html', operators=dummy_operators)
 
-@development_bp.route('/cards')
-def card1_endpoint():
-    return render_template(f'development/cards.html', operator=operator_instance)
+# @development_bp.route('/button')
+# def button_endpoint():
+#     return render_template(f'development/button2.html')
+
+# @development_bp.route('/test-func', methods=['POST'])
+# def trigger_test_func():
+#     result = test_func()
+#     return jsonify({'message': result})
+
+# @development_bp.route('/button-click', methods=['POST'])
+# def button_click():
+#     project = 'ComServices'
+#     filtered_data = model_rq1.get_entry_by_project(project)
+#     return jsonify({'success': True})
+
+@development_bp.route('/rq1/<package>', methods=['GET'])
+def query_random_item(package):
+    return jsonify({'message': package})
