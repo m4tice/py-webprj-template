@@ -1,23 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const table = document.getElementById("rq1-table");
-    const states = table.getElementsByClassName("state"); 
+    const states = table.getElementsByClassName("state");
     const doors = table.getElementsByClassName("DOORS");
     const rows = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < rows.length; i++){
+    for (let i = 1; i < rows.length; i++) {
         const row = rows[i];
 
         // State of element
-        const lifeCycleState = row.getElementsByTagName("td")[2];
-        
+        const lifeCycleState = row.getElementsByTagName("td")[3];
+
         // allocation
-        const allocation = row.getElementsByTagName("td")[8];
+        const allocation = row.getElementsByTagName("td")[9];
 
         // category
-        const category = row.getElementsByTagName("td")[9];
+        const category = row.getElementsByTagName("td")[10];
 
         // DOORS
-        const doors = row.getElementsByTagName("td")[10];
+        const doors = row.getElementsByTagName("td")[11];
 
         // Life Cycle State validation
         if ("Conflicted" === lifeCycleState.innerText) {
@@ -43,3 +43,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
+function query_by_package(package) {
+    fetch(`/development/rq1/${package}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data)
+        })
+};
