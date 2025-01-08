@@ -18,6 +18,9 @@ def create_app():
 
     from app.cards import cards_bp
     app.register_blueprint(cards_bp, url_prefix='/cards')
+
+    from app.table_js import table_js_bp
+    app.register_blueprint(table_js_bp, url_prefix='/table-js')
     
     return app
 
