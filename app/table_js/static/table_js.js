@@ -20,7 +20,7 @@ function createButton(buttonId) {
         fetch('/table-js/data')
         .then(response => response.json())
         .then(data => {
-            createData(data[buttonId]);
+            createTable(data[buttonId]);
         });
     }
     document.body.appendChild(button);
@@ -35,4 +35,39 @@ function createData(data) {
     const paragraph = document.createElement('p');
     paragraph.textContent = JSON.stringify(data);
     document.body.appendChild(paragraph);
+}
+
+function createTable(data) {
+    const existingTable = document.querySelector('table');
+    if (existingTable) {
+        existingTable.remove();
+    }
+
+    const tableHeaders = ['Name', 'Occupation', 'Age'];
+    
+    const table = document.createElement('table');
+    table.className = 'table table-striped';
+
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    tableHeaders.forEach(headerText => {
+        const header = document.createElement('th');
+        header.className = 'table-dark';
+        header.textContent = headerText;
+        headerRow.appendChild(header);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement('tbody');
+    const row = document.createElement('tr');
+    data.forEach(item => {
+        const cell = document.createElement('td');
+        cell.textContent = item;
+        row.appendChild(cell);
+    });
+    tbody.appendChild(row);
+    table.appendChild(tbody);
+
+    document.body.appendChild(table);
 }
