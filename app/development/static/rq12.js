@@ -38,7 +38,7 @@ function createButton(button_name){
     button.className = 'btn btn-primary';
     button.textContent = button_name;
     button.style.width = '100%';
-    button.style.fontSize = 'xx-small';
+    button.style.fontSize = 'x-small';
 
     divButton.appendChild(button);
 
