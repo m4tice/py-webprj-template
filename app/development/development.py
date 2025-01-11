@@ -35,10 +35,6 @@ def table_endpoint():
 def rq1_endpoint():
     return render_template('development/rq1.html', packages=packages, headers=model_rq1.get_headers(), data=model_rq1.get_all_items())
 
-@development_bp.route('/catalogue')
-def catalogue1_endpoint():
-    return render_template('development/catalogue.html', operators=dummy_operators)
-
 # @development_bp.route('/button')
 # def button_endpoint():
 #     return render_template(f'development/button2.html')
