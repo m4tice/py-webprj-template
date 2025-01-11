@@ -42,7 +42,8 @@ DATABASE_RQ1 = 'app/model/dbs/rq12.db'
 model_rq1 = DBModel(DATABASE_RQ1)
 model_rq1.DEBUG = True
 
-packages = ['ComServices',
+packages = ['Alle',
+            'ComServices',
             'ComVeh',
             'ComCo',
             'ComPtc',
