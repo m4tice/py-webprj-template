@@ -57,3 +57,9 @@ def rq12_endpoint():
 @development_bp.route('/rq12-data')
 def rq12_data_endpoint():
     return jsonify({'packages': packages, 'headers': model_rq1.get_headers(), 'data': model_rq1.get_all_items()})
+
+@development_bp.route('/rq12-data/<package>', methods=['GET'])
+def rq12_data_package_endpoint(package):
+    if package == 'Alle':
+        return jsonify({'packages': packages, 'headers': model_rq1.get_headers(), 'data': model_rq1.get_all_items()})
+    return jsonify({'packages': packages, 'headers': model_rq1.get_headers(), 'data': model_rq1.get_entry_by_project(package)})

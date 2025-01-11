@@ -13,6 +13,10 @@ function fetchData() {
 }
 
 function createButtons(button_names){
+    if (document.querySelector('.container-buttons')) {
+        document.querySelector('.container-buttons').remove();
+    }
+
     const divCont = document.createElement('div');
     divCont.className = 'container container-buttons';
 
@@ -38,7 +42,22 @@ function createButton(button_name){
     button.className = 'btn btn-primary';
     button.textContent = button_name;
     button.style.width = '100%';
-    button.style.fontSize = 'x-small';
+    button.style.fontSize = 'small';
+
+    button.onclick = function(){
+        fetch(`/development/rq12-data/${button_name}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            createButtons(data.packages);
+            createTable(data.headers, data.data);
+            styleTable();
+        });
+    }
 
     divButton.appendChild(button);
 
@@ -46,6 +65,10 @@ function createButton(button_name){
 }
 
 function createTable(headers, data) {
+    if (document.querySelector('.container-table')) {
+        document.querySelector('.container-table').remove();
+    }
+
     const divContTable = document.createElement('div');
     divContTable.className = 'container container-table';
 
@@ -105,7 +128,7 @@ function createData(table, headers, data){
         buttonBilled.style.width = '100%';
         buttonBilled.style.fontSize = 'xx-small';
         buttonBilled.onclick = function(){
-            alert('Billed!');
+            alert(tr.getElementsByClassName(headers[0].toLowerCase())[0].innerText);
         }
 
         tdButton.appendChild(buttonBilled);
