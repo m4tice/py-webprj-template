@@ -57,3 +57,11 @@ def catalogue1_endpoint():
 @development_bp.route('/rq1/<package>', methods=['GET'])
 def query_random_item(package):
     return jsonify({'message': package})
+
+@development_bp.route('/rq12')
+def rq12_endpoint():
+    return render_template('development/rq12.html')
+
+@development_bp.route('/rq12-data')
+def rq12_data_endpoint():
+    return jsonify({'packages': packages, 'headers': model_rq1.get_headers(), 'data': model_rq1.get_all_items()})
