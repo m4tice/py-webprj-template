@@ -13,9 +13,9 @@
         <div class="row">
             {% for package in packages %}
             <div class="col-md-3">
-                <button class="btn btn-primary">{{ package }}</button>
+                <button class="btn btn-primary" onclick="query_by_package('{{ package }}')">{{ package }}</button>
             </div>
-            {% endfor %}            
+            {% endfor %}
         </div>
     </div>
 
