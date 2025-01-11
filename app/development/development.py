@@ -23,10 +23,6 @@ def weapons_endpoint():
     """
     return render_template('development/weapons.html', headers=headers_weapon, data=data_weapons)
 
-@development_bp.route('/table')
-def table_endpoint():
-    return render_template('development/table.html')
-
 # @development_bp.route('/button2')
 # def rq1_endpoint():
 #     return render_template('development/button2.html', packages=packages, headers=model_rq1.get_headers(), data=model_rq1.get_all_items())
