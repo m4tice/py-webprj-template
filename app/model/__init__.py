@@ -1,14 +1,16 @@
 from .model import DBModel
 from .operator import Operator
 
+
+# Opeartor DB instance
 DATABASE_OPERATOR = 'app/model/dbs/operators2.db'
-
 model_operator = DBModel(DATABASE_OPERATOR)
+
+# All data from the operators table
 data_operators = model_operator.get_all_items()
-
-print(model_operator.get_headers())
-
 operators = [Operator(*item) for item in data_operators]
+
+# Dummy data from the operators table
 data_operators_dummy = [data_operators[0],
                         data_operators[3],
                         data_operators[7],
@@ -20,8 +22,31 @@ data_operators_dummy = [data_operators[0],
                         data_operators[35]]
 dummy_operators = [Operator(*item) for item in data_operators_dummy]
 
+# Data for card_01.html
+operator_instance = Operator(*data_operators[30])
 
+
+# Weapon DB instance
 DATABASE_WEAPONS = 'app/model/dbs/weapons.db'
 model_weapon = DBModel(DATABASE_WEAPONS)
+
+# Headers for the weapons table
 headers_weapon = model_weapon.get_headers()
+
+# Data from the weapons table
 data_weapons = model_weapon.get_all_items()[:10]
+
+
+# RQ1 data
+DATABASE_RQ1 = 'app/model/dbs/rq12.db'
+model_rq1 = DBModel(DATABASE_RQ1)
+model_rq1.DEBUG = True
+
+packages = ['Alle',
+            'ComServices',
+            'ComVeh',
+            'ComCo',
+            'ComPtc',
+            'ComDia',
+            'LinStack',
+            'SENT']

@@ -1,0 +1,104 @@
+/* GENERAL SETTINGS */
+body {
+    background: #c850c0;
+    background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+    background: linear-gradient(45deg, #4158d0, #c850c0);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+
+.col-md-3 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 16px 0 16px 0 !important;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 300px; */
+    max-width: 100%;
+    overflow: hidden;
+    border-width: 0 !important;
+}
+
+.card-img {
+    transition: filter 0.3s ease; /* Add transition for smooth effect */
+    -webkit-transition: -webkit-filter 0.3s ease; /* Add transition for smooth effect */
+    -webkit-backface-visibility: hidden; /* not sure what this does */
+    -webkit-transform: translateZ(0) scale(1, 1);
+    -webkit-font-smoothing: antialiased;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.card-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    font-size: small !important;
+}
+
+.col-md-4 {
+    padding: 70px !important;
+}
+
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    transition: transform 0.3s ease; /* Transition for sliding effect */
+}
+
+.card:hover .card-img {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.card:hover .card-body {
+    transform: translateY(-30px);
+    padding-bottom: 16px !important;
+}
+
+.card-buttons {
+    position: absolute;
+    bottom: -50px; /* Start position off screen */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 6px;
+    transition: bottom 0.3s ease; /* Transition for sliding effect */
+}
+
+.card:hover .card-buttons {
+    bottom: 16px; /* End position on hover */
+}

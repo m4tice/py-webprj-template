@@ -5,7 +5,6 @@ docstring
 import sqlite3
 import random
 
-DEBUG_MODE = True
 
 class DBModel:
     """
@@ -16,6 +15,7 @@ class DBModel:
         Constructor
         """
         self.db = db
+        self.DEBUG = False
 
         if self.db is not None:
             self.connection = sqlite3.connect(self.db, check_same_thread=False)
@@ -47,7 +47,7 @@ class DBModel:
         """
         query_headers = f'SELECT * FROM {self.table_name}'
 
-        if DEBUG_MODE:
+        if self.DEBUG:
             print(f'[GUU8HC] Query: {query_headers}')
 
         self.cursor.execute(query_headers)
@@ -71,30 +71,37 @@ class DBModel:
         """
         query_select_all = f'SELECT * FROM {self.table_name}'
 
-        if DEBUG_MODE:
+        if self.DEBUG:
             print(f'[GUU8HC] Query: {query_select_all}')
 
         self.cursor.execute(query_select_all)
         rows = self.cursor.fetchall()
         return rows
 
-    # def get_item_by_team(self, team):
-    #     """
-    #     get data by name
-    #     """
-    #     query_select_by_product_team = f'SELECT * FROM {self.table_name} WHERE Team like "%{team}%"'
+    def get_entry_by_id(self, id):
+        """
+        get data by name
+        """
+        # query_select_by_product_team = f'SELECT * FROM {self.table_name} WHERE Team like "%{team}%"'
+        query_select_item_by_id = f'SELECT * FROM {self.table_name} WHERE shorttitle="{id}";'
 
-    #     self.cursor.execute(query_select_by_product_team)
-    #     rows = self.cursor.fetchall()
+        if self.DEBUG:
+            print(f'[DEBUG] Query: {query_select_item_by_id}')
 
-    #     return random.choice(rows)
+        self.cursor.execute(query_select_item_by_id)
+        rows = self.cursor.fetchall()
 
-    # def get_item_by_name(self, name):
-    #     """
-    #     get data by name
-    #     """
-    #     query_select_by_product_name = f'SELECT * FROM {self.table_name} WHERE Name like "%{name}%"'
+        return random.choice(rows)
 
-    #     self.cursor.execute(query_select_by_product_name)
-    #     rows = self.cursor.fetchall()
-    #     return random.choice(rows) if len(rows) > 0 else rows[0]
+    def get_entry_by_project(self, project):
+        """
+        get data by name
+        """
+        query_select_item_by_project = f'SELECT * FROM {self.table_name} WHERE project="{project}"'
+
+        if self.DEBUG:
+            print(f'[DEBUG] Query: {query_select_item_by_project}')
+
+        self.cursor.execute(query_select_item_by_project)
+        rows = self.cursor.fetchall()
+        return rows

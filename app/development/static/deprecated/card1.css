@@ -1,0 +1,59 @@
+body {
+    background: #c850c0;
+    background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+    background: linear-gradient(45deg, #4158d0, #c850c0);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.card {
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.card-img {
+    transition: filter 0.3s ease; /* Add transition for smooth effect */
+    -webkit-transition: -webkit-filter 0.3s ease; /* Add transition for smooth effect */
+    -webkit-backface-visibility: hidden; /* not sure what this does */
+    -webkit-transform: translateZ(0) scale(1, 1);
+    -webkit-font-smoothing: antialiased;
+}
+
+.card:hover .card-img {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: translateY(10%);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-buttons button {
+    flex: 1;
+    /* margin: 0 5px; */
+    font-size: small !important;
+}
+
+.card:hover .card-img-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
